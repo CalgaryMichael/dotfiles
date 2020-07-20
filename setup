@@ -1,0 +1,35 @@
+# init folders
+mkdir ~/repos
+mkdir ~/bin
+
+# Install Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Install various packages
+brew install vim
+  \ zsh
+brew cask install hyper
+
+# set zsh as default
+chsh -s /usr/local/bin/zsh
+cp ~/src/.vimrc ~/.vimrc
+
+# install node
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+nvm install 12.18.2
+
+# install hyper
+brew cask install hyper
+npm install -g hpm-cli
+hpm i hyperterm-title
+
+# setup git (NOTE: manually adding to GitHub is still necessary)
+git config --global user.name "Calgary Michael"
+git config --global user.email "cseth.michael@gmail.com"
+git config --global alias.st status
+
+ssh-keygen -t rsa -b 4096 -C "cseth.michael@gmail.com"
+eval "$(ssh-agent -s)"
+cp ./src/ssh-config ~/.ssh/config
+ssh-add -K ~/.ssh/id_rsa
+
