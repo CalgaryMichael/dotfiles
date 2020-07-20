@@ -22,12 +22,20 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 nvm install 12.18.2
 
 # install python
+curl https://www.python.org/ftp/python/3.8.4/python-3.8.4-macosx10.9.pkg -o ~/Downloads/python-3.8.4.pkg
 sudo -S installer -pkg ~/Downloads/python-3.8.4.pkg -target /Applications
+rm ~/Downloads/python-3.8.4.pkg
 
 # install hyper
 brew cask install hyper
 npm install -g hpm-cli
 cp ./src/.hyper.js ~/.hyper.js
+
+# install atom
+curl https://atom-installer.github.com/v1.49.0/atom-mac.zip?s=1594405715&ext=.zip -o ~/Downloads/atom-mac.zip
+unzip ~/Downloads/atom-mac.zip
+mv ~/Atom.app /Applications/Atom.app
+rm ~/Downloads/atom-mac.zip
 
 # setup git (NOTE: manually adding to GitHub is still necessary)
 git config --global user.name "Calgary Michael"
