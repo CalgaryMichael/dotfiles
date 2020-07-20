@@ -1,6 +1,7 @@
 # init folders
 mkdir ~/repos
 mkdir ~/bin
+mkdir ~/go
 
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -8,20 +9,25 @@ mkdir ~/bin
 # Install various packages
 brew install vim
   \ zsh
-brew cask install hyper
+  \ golang
 
 # set zsh as default
 chsh -s /usr/local/bin/zsh
 cp ./src/.vimrc ~/.vimrc
 cp ./src/.zshrc ~/.zshrc
+cp ./src/.zsh_alias ~/.zsh_alias
 
 # install node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
 nvm install 12.18.2
 
+# install python
+sudo -S installer -pkg ~/Downloads/python-3.8.4.pkg -target /Applications
+
 # install hyper
 brew cask install hyper
 npm install -g hpm-cli
+cp ./src/.hyper.js ~/.hyper.js
 
 # setup git (NOTE: manually adding to GitHub is still necessary)
 git config --global user.name "Calgary Michael"
