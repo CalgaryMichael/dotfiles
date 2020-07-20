@@ -3,6 +3,9 @@ mkdir ~/repos
 mkdir ~/bin
 mkdir ~/go
 
+# install cli tools
+xcode-select --install
+
 # Install Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
@@ -10,6 +13,10 @@ mkdir ~/go
 brew install vim
   \ zsh
   \ golang
+brew cask install docker
+
+# TODO: install mongodb
+# TODO: install postgres
 
 # set zsh as default
 chsh -s /usr/local/bin/zsh
@@ -26,6 +33,12 @@ curl https://www.python.org/ftp/python/3.8.4/python-3.8.4-macosx10.9.pkg -o ~/Do
 sudo -S installer -pkg ~/Downloads/python-3.8.4.pkg -target /Applications
 rm ~/Downloads/python-3.8.4.pkg
 
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+/Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8 get-pip.py
+rm get-pip.py
+
+sudo /Library/Frameworks/Python.framework/Versions/3.8/bin/pip3 install virtualenvwrapper
+
 # install hyper
 brew cask install hyper
 npm install -g hpm-cli
@@ -36,6 +49,9 @@ curl https://atom-installer.github.com/v1.49.0/atom-mac.zip?s=1594405715&ext=.zi
 unzip ~/Downloads/atom-mac.zip
 mv ~/Atom.app /Applications/Atom.app
 rm ~/Downloads/atom-mac.zip
+
+apm install magicpython
+# TODO: find more + better packages for Atom
 
 # setup git (NOTE: manually adding to GitHub is still necessary)
 git config --global user.name "Calgary Michael"

@@ -68,7 +68,17 @@ DISABLE_AUTO_TITLE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  github
+  docker
+  docker-compose
+  node
+  npm
+  golang
+  brew
+  heroku
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,3 +126,7 @@ export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$HOME/bin
 
 source ~/.zsh_alias
+
+# python virtualenvwrapper stuff
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$(which python3.8)
