@@ -12,7 +12,8 @@ brew cask install hyper
 
 # set zsh as default
 chsh -s /usr/local/bin/zsh
-cp ~/src/.vimrc ~/.vimrc
+cp ./src/.vimrc ~/.vimrc
+cp ./src/.zshrc ~/.zshrc
 
 # install node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
@@ -21,7 +22,6 @@ nvm install 12.18.2
 # install hyper
 brew cask install hyper
 npm install -g hpm-cli
-hpm i hyperterm-title
 
 # setup git (NOTE: manually adding to GitHub is still necessary)
 git config --global user.name "Calgary Michael"
