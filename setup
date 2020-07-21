@@ -10,13 +10,15 @@ xcode-select --install
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 
 # Install various packages
+brew tap mongodb/brew
+brew tap dbcli/tap
 brew install vim
   \ zsh
   \ golang
+  \ postgresql
+  \ pgcli
+  \ mongodb-community
 brew cask install docker
-
-# TODO: install mongodb
-# TODO: install postgres
 
 # set zsh as default
 chsh -s /usr/local/bin/zsh
