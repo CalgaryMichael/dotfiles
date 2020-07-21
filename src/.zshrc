@@ -119,7 +119,7 @@ precmd() { echo -en "\033]0;${PWD/#$HOME/~}\007" }
 
 # golang stuff
 export GOPATH=$HOME/go
-export GOROOT=$(which go)
+export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
