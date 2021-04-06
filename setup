@@ -53,7 +53,11 @@ mv ~/Atom.app /Applications/Atom.app
 rm ~/Downloads/atom-mac.zip
 
 apm install magicpython
-# TODO: find more + better packages for Atom
+  \ highlight-selected
+  \ git-blame
+  \ advanced-open-files
+  \ file-icons
+  \ go-plus
 
 # setup git (NOTE: manually adding to GitHub is still necessary)
 git config --global user.name "Calgary Michael"

@@ -130,3 +130,5 @@ source ~/.zsh_alias
 # python virtualenvwrapper stuff
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$(which python3.8)
+
+source virtualenvwrapper.sh
