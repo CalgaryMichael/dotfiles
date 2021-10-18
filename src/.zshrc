@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/cm/.oh-my-zsh"
+export ZSH="/Users/$(id -un)/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -110,12 +110,10 @@ source $ZSH/oh-my-zsh.sh
 
 # homebrew needs
 export PATH="/usr/local/sbin:$PATH"
-export CPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+eval $(/opt/homebrew/bin/brew shellenv)
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
+export NVM_DIR=$HOME/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # window title
 precmd() { echo -en "\033]0;${PWD/#$HOME/~}\007" }
@@ -123,7 +121,6 @@ precmd() { echo -en "\033]0;${PWD/#$HOME/~}\007" }
 
 # golang stuff
 export GOPATH=$HOME/go
-#export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
@@ -137,12 +134,10 @@ export VIRTUALENVWRAPPER_PYTHON=$(which python3.8)
 
 source virtualenvwrapper.sh
 
-#export PATH=$PATH:/usr/local/Cellar/i386-elf-grub/2.02/bin
-
 export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
-
 
 #autoload -U +X bashcompinit && bashcompinit
 #complete -o nospace -C /usr/local/bin/terraform terraform
 
-eval "$(starship init zsh)"
+# TODO: still needs more setup before we initialize our shell with starship
+#eval "$(starship init zsh)"
