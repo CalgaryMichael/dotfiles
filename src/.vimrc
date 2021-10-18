@@ -1,3 +1,5 @@
+filetype plugin indent off
+
 " Configuration file for vim
 set modelines=0		" CVE-2007-2438
 
@@ -15,15 +17,7 @@ let skip_defaults_vim=1
 
 set nu
 
-" Tabs
-" set softtabstop=4
-" set expandtab
-
-
 " Vundle
-set nocompatible              " be iMproved
-filetype off
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -40,7 +34,7 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeCascadeSingleChildDir=0
-let NERDTreeIgnore = ['\.swp$', '__pycache__', 'node_modules', '\.a$', '\.o$', '\.d$', '\.DS_Store$']
+let NERDTreeIgnore = ['\.swp$', '__pycache__', 'node_modules', '\.a$', '\.o$', '\.d$', '\.DS_Store$', '\.dSYM$']
 
 " Plugins
 Plugin 'joshdick/onedark.vim'
@@ -52,8 +46,25 @@ if (has("autocmd") && !has("gui_running"))
   augroup END
 endif
 
+Plugin 'KarimElghamry/vim-auto-comment'
+let g:default_inline_comment = '//'
+let g:inline_comment_dict = {
+		\'//': ["js", "ts", "cpp", "c", "dart", "go"],
+		\'#': ['py', 'sh'],
+		\'"': ['vim'],
+		\}
 
+" Golang Stuff
 Plugin 'fatih/vim-go'
+set rtp+=$GOROOT/misc/vim
+let g:go_highlight_operators=1
+let g:go_highlight_functions=1
+let g:go_highlight_function_parameters=1
+let g:go_highlight_function_calls=1
+let g:go_highlight_types=1
+let g:go_highlight_fields=1
+let g:go_highlight_variable_declarationss=1
+let g:go_highlight_variable_assignments=1
 
 " Javascript Stuff
 Plugin 'pangloss/vim-javascript'
@@ -64,8 +75,11 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 
+" Rust + friends
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+
 let python_highlight_all=1
-syntax on
 
 call vundle#end()
 
@@ -73,3 +87,4 @@ let g:asmsyntax = 'nasm'
 
 filetype plugin indent on
 colorscheme onedark
+syntax on

@@ -108,6 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# homebrew needs
+export PATH="/usr/local/sbin:$PATH"
+export CPATH=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -119,7 +123,7 @@ precmd() { echo -en "\033]0;${PWD/#$HOME/~}\007" }
 
 # golang stuff
 export GOPATH=$HOME/go
-export GOROOT=/usr/local/opt/go/libexec
+#export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
@@ -132,3 +136,13 @@ export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$(which python3.8)
 
 source virtualenvwrapper.sh
+
+#export PATH=$PATH:/usr/local/Cellar/i386-elf-grub/2.02/bin
+
+export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
+
+
+#autoload -U +X bashcompinit && bashcompinit
+#complete -o nospace -C /usr/local/bin/terraform terraform
+
+eval "$(starship init zsh)"
