@@ -1,0 +1,34 @@
+key_bindings:
+    - { key: Comma,     mods: Command,      command:
+      {program: "sh", args: ["-c","open ~/.config/alacritty/alacritty.yml"]}     }
+    - { key: N,         mods: Command,      action: SpawnNewInstance       }
+    - { key: Space,     mods: Alt,          chars: " "                     }
+    - { key: Back,      mods: Super,   chars: "\x15" } # delete word/line
+    - { key: Left,      mods: Alt,     chars: "\x1bb"                       } # one word left
+    - { key: Right,     mods: Alt,     chars: "\x1bf"                       } # one word right
+    - { key: Left,      mods: Command, chars: "\x1bOH",   mode: AppCursor   } # Home
+    - { key: Right,     mods: Command, chars: "\x1bOF",   mode: AppCursor   } # End
+
+    # key bindings for tmux
+    - { key: D,     mods: Command,       chars: "\x02\x76" }
+    - { key: W,     mods: Command,       chars: "\x02\x78" }
+    - { key: H,     mods: Command,       chars: "\x02\x68" }
+    - { key: J,     mods: Command,       chars: "\x02\x6a" }
+    - { key: K,     mods: Command,       chars: "\x02\x6b" }
+    - { key: L,     mods: Command,       chars: "\x02\x6c" }
+    - { key: T,     mods: Command,       chars: "\x02\x63" }  # new tab
+    - { key: R,     mods: Command,       chars: "\x02\x72" }  # reload config
+    - { key: Key0,  mods: Command,       chars: "\x02\x30" }
+    - { key: Key1,  mods: Command,       chars: "\x02\x31" }
+    - { key: Key2,  mods: Command,       chars: "\x02\x32" }
+    - { key: Key3,  mods: Command,       chars: "\x02\x33" }
+    - { key: Key4,  mods: Command,       chars: "\x02\x34" }
+    - { key: Key5,  mods: Command,       chars: "\x02\x35" }
+    - { key: Key6,  mods: Command,       chars: "\x02\x36" }
+    - { key: Key7,  mods: Command,       chars: "\x02\x37" }
+    - { key: Key8,  mods: Command,       chars: "\x02\x38" }
+    - { key: Key9,  mods: Command,       chars: "\x02\x39" }
+    - { key: Left,  mods: Command,       chars: "\x02\x48" }
+    - { key: Down,  mods: Command,       chars: "\x02\x4a" }
+    - { key: Up,    mods: Command,       chars: "\x02\x4b" }
+    - { key: Right, mods: Command,       chars: "\x02\x4c" }
