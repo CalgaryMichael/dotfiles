@@ -10,6 +10,16 @@ export ZSH="/Users/$(id -un)/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
+# homebrew needs
+export PATH="/usr/local/sbin:$PATH"
+eval $(/opt/homebrew/bin/brew shellenv)
+
+# tmux
+export ZSH_TMUX_AUTOSTART=true
+export ZSH_TMUX_AUTOCONNECT=true
+export ZSH_TMUX_UNICODE=true
+export ZSH_TMUX_CONFIG=$HOME/.config/tmux/.tmux.conf
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -69,15 +79,13 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+  brew
   git
   github
-  docker
-  docker-compose
+  golang
   node
   npm
-  golang
-  brew
-  heroku
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,10 +115,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# homebrew needs
-export PATH="/usr/local/sbin:$PATH"
-eval $(/opt/homebrew/bin/brew shellenv)
 
 export NVM_DIR=$HOME/.nvm
 source $(brew --prefix nvm)/nvm.sh
