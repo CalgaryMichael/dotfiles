@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 
 # homebrew needs
 export PATH="/usr/local/sbin:$PATH"
-eval $(/opt/homebrew/bin/brew shellenv)
+eval $($(which brew) shellenv)
 
 # tmux
 export ZSH_TMUX_AUTOSTART=true
