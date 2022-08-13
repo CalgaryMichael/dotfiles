@@ -6,8 +6,7 @@ echo "Setting up system packages..."
 # Install various packages
 brew tap mongodb/brew
 brew tap dbcli/tap
-brew install vim \
-    golang \
+brew install golang \
     postgresql \
     pgcli \
     mongodb-community

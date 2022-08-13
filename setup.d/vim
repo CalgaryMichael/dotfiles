@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+echo "Setting up vim..."
+
+brew install vim
+
+# Vundle
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
+echo "Please run :PluginInstall next time you open vim"
