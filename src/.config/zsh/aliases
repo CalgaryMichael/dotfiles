@@ -1,0 +1,10 @@
+alias c="clear"
+alias ..="cd .."
+alias ...="cd ../.."
+
+# quick! connect to the db!
+alias conn_pw="pgcli \"$(cat ~/.config/pgcli/conn/studio-prod-write.txt)\""
+alias conn_pro="pgcli \"$(cat ~/.config/pgcli/conn/studio-prod-read.txt)\""
+alias conn_dw="pgcli \"$(cat ~/.config/pgcli/conn/studio-dev-write.txt)\""
+alias conn_lw="pgcli \"$(cat ~/.config/pgcli/conn/studio-local-write.txt)\""
+

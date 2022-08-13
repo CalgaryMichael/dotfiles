@@ -1,0 +1,22 @@
+# cache this at session start so that we can 
+# check to make sure that we don't re-init if
+# we have already initialized a python virtualenv
+BASE_PYTHON_LOC="$(which python)"
+function activate_venv() {
+  python_loc="$(which python)"
+  if [ "$python_loc" = "$BASE_PYTHON_LOC" ]; then
+    if [ -d .venv ]; then
+      source .venv/bin/activate
+    fi
+  fi
+}
+
+add-zsh-hook chpwd activate_venv
+
+function activate_nvm() {
+  if [ -s .nvmrc ]; then
+    nvm use $(cat .nvmrc)
+  fi
+}
+
+add-zsh-hook chpwd activate_nvm

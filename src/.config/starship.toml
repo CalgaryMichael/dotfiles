@@ -1,0 +1,9 @@
+command_timeout = 10000
+
+[aws]
+disabled = false
+
+
+[[battery.display]]
+threshold = 100
+

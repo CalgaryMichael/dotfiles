@@ -1,2 +1,9 @@
+src/.config/zsh/history
+src/.config/zsh/rc/local
+src/.config/pgcli/history
+src/.config/pgcli/log
+src/.config/pgcli/conn/*
+src/.config/wg/*.conf
+
 *.swp
 *.DS_Store

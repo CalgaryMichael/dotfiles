@@ -3,12 +3,12 @@ import:
   - ~/.config/alacritty/font.yml
   - ~/.config/alacritty/keys.yml
 
-shell:
-  program: /bin/zsh
-  args:
-    - -l
-    - -c
-    - "tmux attach || tmux -f $TMUX_CONFIG_LOC"
+    #shell:
+    #  program: /bin/zsh
+    #  args:
+    #    - -l
+    #    - -c
+    #    - "tmux attach || tmux -f $TMUX_CONFIG_LOC"
 
 window:
   decorations: transparent
@@ -17,7 +17,7 @@ window:
   # by DPI and the specified value is always added at both opposing sides.
   padding:
     x: 10
-    y: 10
+    y: 25
 
 scrolling:
   # Specifying '0' will disable scrolling.

@@ -7,7 +7,7 @@ mkdir -p ~/go
 
 cp ./src/.vimrc ~/.vimrc
 cp ./src/.zshrc ~/.zshrc
-cp ./src/.zsh_alias ~/.zsh_alias
+cp -r ./src/.config ~/.config
 
 # install cli tools
 if ! [ -x "$(command -v xcode-select)" ]; then
@@ -49,26 +49,6 @@ curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 rm get-pip.py
 
 sudo /Library/Frameworks/Python.framework/Versions/3.8/bin/pip3 install virtualenvwrapper
-
-# install hyper
-brew install --cask hyper
-npm install -g hpm-cli
-cp ./src/.hyper.js ~/.hyper.js
-
-# install atom
-# TODO: this is currently broken. Not sure why. I believe the link is out of date
-#       Consider dropping this entirely? Download VSCode instead?
-# curl https://atom-installer.github.com/v1.49.0/atom-mac.zip?s=1594405715&ext=.zip -o ~/Downloads/atom-mac.zip
-# unzip ~/Downloads/atom-mac.zip
-# mv ~/Atom.app /Applications/Atom.app
-# rm ~/Downloads/atom-mac.zip
-
-# apm install magicpython \
-#     highlight-selected \
-#     git-blame \
-#     advanced-open-files \
-#     file-icons \
-#     go-plus
 
 # setup git (NOTE: manually adding to GitHub is still necessary)
 git config --global user.name "Calgary Michael"
